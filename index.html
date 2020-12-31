@@ -6,35 +6,43 @@
     <title>Etch-a-Sketch</title>
 
     <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Galindo&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <section class="game">
       <h1>Etch-a-Sketch</h1>
 
-      <div class="menu">
-        <div class="grid-size">
-          <h2>GRID SIZE</h2>
-          <input type="range" min="1" max="100" , value="32" />
-          <h3>32x32</h3>
+      <div class="drawing-screen">
+        <div class="menu">
+          <div class="grid-size">
+            <h2>GRID SIZE</h2>
+            <input type="range" min="1" max="100" , value="32" />
+            <h3>32x32</h3>
+          </div>
+
+          <hr />
+
+          <div class="color-pick">
+            <h2>COLOR PICK</h2>
+            <input type="color" />
+          </div>
+
+          <hr />
+
+          <button class="eraser">ERASER</button>
+
+          <hr />
+
+          <button class="clear">CLEAR</button>
         </div>
 
-        <hr />
-
-        <div class="color-pick">
-          <h2>COLOR PICK</h2>
-          <input type="color" />
-        </div>
-
-        <hr />
-
-        <button class="eraser">ERASER</button>
-
-        <hr />
-
-        <button class="clear">CLEAR</button>
+        <div class="board"></div>
       </div>
-
-      <div class="screen"></div>
     </section>
   </body>
   <script src="script.js"></script>
