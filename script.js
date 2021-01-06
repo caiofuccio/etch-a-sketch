@@ -45,6 +45,7 @@ const game = () => {
       board.innerHTML = "";
       drawGrid();
       hoverCellColor();
+      clearButton();
     });
   };
 
@@ -72,6 +73,7 @@ const game = () => {
     });
   };
 
+  // Eraser button to change cells to white on hover
   const eraserButton = () => {
     const eraserBtn = document.querySelector(".eraser");
 
@@ -91,6 +93,7 @@ const game = () => {
     });
   };
 
+  // Clear button to turn all divs background's white
   const clearButton = () => {
     const clearBtn = document.querySelector(".clear");
     const cells = document.querySelectorAll(".cell");
@@ -102,6 +105,26 @@ const game = () => {
     });
   };
 
+  // Redraw the board (cells size) on window size change
+  const redrawWindowChange = () => {
+    const cells = document.querySelectorAll(".cell");
+
+    window.addEventListener("resize", () => {
+      // board.innerHTML = "";
+      // drawGrid();
+      const gridSize = Number(document.querySelector(".grid-size input").value);
+      const boardSize = document.querySelector(".board").offsetHeight;
+
+      cells.forEach((cell) => {
+        cell.style.width = `${boardSize / gridSize}px`;
+        cell.style.height = `${boardSize / gridSize}px`;
+      });
+
+      hoverCellColor();
+      clearButton();
+    });
+  };
+
   // Calling inner functions
   updateText();
   drawGrid();
@@ -110,6 +133,7 @@ const game = () => {
   changePickColor();
   eraserButton();
   clearButton();
+  redrawWindowChange();
 };
 
 // Calling main function
