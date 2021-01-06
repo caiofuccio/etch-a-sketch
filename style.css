@@ -115,9 +115,10 @@ body {
 .board {
   height: 50rem;
   width: 50rem;
-  border: 0.5rem solid black;
+  outline: thick solid black;
   margin-right: 15rem;
-  box-shadow: 0.5rem 0.5rem #8a8a8a;
+  box-shadow: 1rem 1rem #8a8a8a;
+  font-size: 0;
 }
 
 /* ------------- */
